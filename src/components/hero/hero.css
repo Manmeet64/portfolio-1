@@ -56,29 +56,29 @@
 
 .awards {
   width: 100%;
-  margin-bottom: 40px;
+  margin: auto 0;
 }
 
 .awards h2 {
   color: white;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .awards p {
-  font-size: 14px;
+  font-size: 16px;
   color: #ddd;
-  margin: 16px 0px;
+  margin: 20px 0px;
 }
 
 .awardList {
   display: flex;
-  gap: 8px;
+  gap: 12px;
 }
 
 .awardList img {
-  width: 36px;
-  height: 36px;
-  padding: 8px;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
   background-color: white;
   border-radius: 100%;
 }
@@ -240,7 +240,7 @@
   }
 
   .awards h2 {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   .imageContainer {
@@ -293,5 +293,9 @@
     width: 80%;
     height: 50vh;
     margin: 20px 0;
+  }
+
+  .awards h2 {
+    font-size: 24px;
   }
 }

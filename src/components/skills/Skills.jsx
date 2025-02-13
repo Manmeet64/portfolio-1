@@ -6,9 +6,9 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 90 },
+        { name: "React.js", level: 85 },
         { name: "JavaScript", level: 85 },
-        { name: "CSS/SCSS", level: 85 },
+        { name: "CSS3", level: 80 },
         { name: "HTML5", level: 90 },
       ]
     },
@@ -16,21 +16,33 @@ const Skills = () => {
       title: "Backend",
       skills: [
         { name: "Node.js", level: 80 },
-        { name: "Python", level: 70 },
+        { name: "Express.js", level: 75 },
         { name: "MongoDB", level: 75 },
-        { name: "SQL", level: 70 },
+        { name: "MySQL", level: 70 },
+        { name: "Neo4j", level: 65 },
+        { name: "Python", level: 85 },
+        { name: "C++", level: 85 },
       ]
     },
     {
       title: "Tools & Others",
       skills: [
         { name: "Git", level: 85 },
+        { name: "GitHub", level: 85 },
         { name: "TypeScript", level: 75 },
-        { name: "Docker", level: 65 },
-        { name: "AWS", level: 60 },
+        { name: "Linux", level: 70 },
+      ]
+    },
+    {
+      title: "Concepts",
+      skills: [
+        { name: "Data Structures & Algorithms", level: 80 },
+        { name: "System Design", level: 60 },
+        { name: "Computer Networking", level: 60 },
       ]
     }
   ];
+  
 
   return (
     <div className={styles.skills}>

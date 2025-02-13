@@ -33,6 +33,23 @@ const followVariants = {
 };
 
 const Hero = () => {
+  const handleResumeClick = (e) => {
+    e.preventDefault();
+    // Open resume PDF in a new tab
+    window.open('/Resume-1.pdf', '_blank');
+  };
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="hero">
       <div className="hSection left">
@@ -45,7 +62,7 @@ const Hero = () => {
         >
           Hey There,
           <br />
-          <span>I'm Robert!</span>
+          <span>I'm Manmeet Singh!</span>
         </motion.h1>
         {/* AWARDS */}
         <motion.div
@@ -54,14 +71,14 @@ const Hero = () => {
           animate="animate"
           className="awards"
         >
-          <motion.h2 variants={awardVariants}>Top Rated Designer</motion.h2>
+          <motion.h2 variants={awardVariants}>Full-Stack Developer | AI & Product Enthusiast</motion.h2>
           <motion.p variants={awardVariants}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          I am a Full-Stack Developer passionate about creating industry-level solutions that make life easier and drive positive change. With expertise in AI and real-world product functionalities, I craft scalable applications that blend innovation with impact. Let's build the future, one line of code at a time!
           </motion.p>
           <motion.div variants={awardVariants} className="awardList">
-            <motion.img variants={awardVariants} src="/award1.png" alt="" />
-            <motion.img variants={awardVariants} src="/award2.png" alt="" />
-            <motion.img variants={awardVariants} src="/award3.png" alt="" />
+            <motion.img variants={awardVariants} src="/fullstack.png" alt="" />
+            <motion.img variants={awardVariants} src="/ai.png" alt="" />
+            <motion.img variants={awardVariants} src="/product.png" alt="" />
           </motion.div>
         </motion.div>
       </div>
@@ -74,7 +91,7 @@ const Hero = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <div className="heroImage">
-          <img src="/hero.png" alt="Profile" />
+          <img src="/hero.jpg" alt="Profile" />
         </div>
       </motion.div>
 
@@ -86,9 +103,9 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="hTitle tagline"
         >
-          Turning Ideas
+          Building Smarter Tech,
           <br />
-          <span>Into Reality</span>
+          <span>Enhancing Lives.</span>
         </motion.h2>
         {/* FOLLOW */}
         <motion.div
@@ -122,6 +139,7 @@ const Hero = () => {
             className="actionButton resume"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleResumeClick}
           >
             <span>Resume</span>
             <Download size={20} />
@@ -132,6 +150,7 @@ const Hero = () => {
             className="actionButton contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleContactClick}
           >
             <span>Contact</span>
             <Send size={20} />

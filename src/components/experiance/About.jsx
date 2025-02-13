@@ -4,38 +4,31 @@ import styles from "./About.module.css";
 const About = () => {
   const education = [
     {
-      school: "University Name",
+      school: "ITM Skills University",
       degree: "Bachelor of Technology",
       field: "Computer Science",
-      year: "2019-2023",
-      description: "Relevant coursework in Data Structures, Algorithms, and Web Development",
+      year: "2023-2027",
+      description: "Achieved a 9.7 CGPA in the first semester and received prizes in public speaking.",
     },
     {
-      school: "High School Name",
+      school: "Don Bosco Senior Secondary School, Nerul",
       degree: "High School",
-      field: "Science & Mathematics",
-      year: "2017-2019",
-      description: "Graduated with distinction in Computer Science",
+      field: "Science & Mathematics (PCM + Computer Science)",
+      year: "2012-2023",
+      description: "Runner-up in high school football, bronze medalist in long jump (DSO), and district-level athlete in Shot Put and Athletics.",
     },
   ];
-
+  
   const experience = [
     {
-      company: "Tech Company",
-      position: "Frontend Developer",
-      year: "2023-Present",
-      description: "Working on building scalable web applications using React and Next.js",
-      skills: ["React", "TypeScript", "Node.js"],
-    },
-    {
-      company: "Startup Name",
-      position: "Software Developer Intern",
-      year: "2022-2023",
-      description: "Developed and maintained full-stack applications",
-      skills: ["JavaScript", "Python", "MongoDB"],
+      company: "Lets Upgrade",
+      position: "Web Development Intern",
+      year: "Dec 2024",
+      description: "Optimized database indexing, boosting query performance by 30%. Configured Apache, Kafka, and Redis to enhance system efficiency by 25%. Developed strategies that increased platform retention by 20% and growth rate by 15%.",
+      skills: ["Database Optimization", "Apache", "Kafka", "Redis", "Web Development"],
     },
   ];
-
+  
   const cards = [
     {
       title: "Web Development",
@@ -109,7 +102,7 @@ const About = () => {
               rotate: { duration: 6, repeat: Infinity, ease: "linear" }
             }}
           >
-            <img src="public\p4.jpg" alt="Education" />
+            <img src="public\education.jpeg" alt="Education" />
           </motion.div>
         </div>
 
@@ -172,12 +165,12 @@ const About = () => {
               rotate: { duration: 6, repeat: Infinity, ease: "linear" }
             }}
           >
-            <img src="/experience.png" alt="Experience" />
+            <img src="/google1.jpeg" alt="Experience" />
           </motion.div>
         </div>
       </div>
 
-      <div className={styles.cardsContainer}>
+      {/* <div className={styles.cardsContainer}>
         {cards.map((card, index) => (
           <motion.div
             key={index}
@@ -195,7 +188,7 @@ const About = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
