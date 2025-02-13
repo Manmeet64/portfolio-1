@@ -1,10 +1,10 @@
 .about {
   height: 100vh;
-  background-color: #0c0c1d;
+  background-color: #FDFBF7;
   position: relative;
   overflow-y: auto;
   scrollbar-width: none;
-  color: white;
+  color: #03031B;
 }
 
 .about::-webkit-scrollbar {
@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, rgba(221, 76, 98, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(187, 221, 225, 0.2) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -60,7 +60,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border: 2px solid rgba(255, 192, 203, 0.2);
+  border: 2px solid rgba(187, 221, 225, 0.3);
   border-radius: 30px;
   transform: rotate(-1deg);
 }
@@ -72,7 +72,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border: 2px solid rgba(221, 76, 98, 0.2);
+  border: 2px solid rgba(191, 227, 204, 0.3);
   border-radius: 30px;
   transform: rotate(1deg);
 }
@@ -84,10 +84,10 @@
   border-radius: 20px;
   position: relative;
   z-index: 1;
-  background-color: #2f204e;
+  background-color: #FFFFFF;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(187, 221, 225, 0.2);
+  box-shadow: 0 20px 40px rgba(43, 123, 140, 0.1);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -110,7 +110,7 @@
 
 .sectionTitle h1 {
   font-size: 72px;
-  color: pink;
+  color: #2B7B8C;
   margin-bottom: 16px;
 }
 
@@ -124,9 +124,10 @@
   position: absolute;
   left: 20px;
   width: 2px;
-  background: linear-gradient(to bottom, pink, #dd4c62);
+  background: linear-gradient(to bottom, #BBDDE1, #2B7B8C);
   top: 0;
   bottom: 0;
+  opacity: 1;
 }
 
 .timelineSection {
@@ -144,45 +145,48 @@
   left: 16px;
   width: 10px;
   height: 10px;
-  background-color: pink;
+  background-color: #BBDDE1;
   border-radius: 50%;
-  border: 3px solid #2f204e;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(187, 221, 225, 0.3);
 }
 
 .timelineContent {
-  background: #2f204e;
+  background: #FFFFFF;
   padding: 24px;
   border-radius: 15px;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(187, 221, 225, 0.2);
+  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
   transition: transform 0.3s ease;
   max-width: 600px;
 }
 
 .timelineContent:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(43, 123, 140, 0.12);
 }
 
 .timelineDate {
-  color: pink;
+  color: #2B7B8C;
   font-size: 14px;
   margin-bottom: 8px;
 }
 
 .timelineContent h3 {
-  color: pink;
+  color: #03031B;
   font-size: 24px;
   margin-bottom: 8px;
 }
 
 .timelineContent h4 {
-  color: #ddd;
+  color: #445566;
   font-size: 18px;
   margin-bottom: 12px;
 }
 
 .timelineContent p {
-  color: #ddd;
+  color: #445566;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -195,12 +199,18 @@
 }
 
 .skill {
-  background-color: rgba(221, 76, 98, 0.1);
-  color: pink;
+  background-color: rgba(187, 221, 225, 0.2);
+  color: #2B7B8C;
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(187, 221, 225, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill:hover {
+  background-color: rgba(187, 221, 225, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Timeline element styles */

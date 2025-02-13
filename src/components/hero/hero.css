@@ -1,10 +1,16 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.woff2') format('woff2');
+}
+
 .hero {
   height: 100vh;
   overflow: hidden;
   display: flex;
   position: relative;
-  background-color: #0c0c1d;
+  background-color: #FDFBF7;
   justify-content: space-between;
+  font-family: 'Gilroy', sans-serif;
 }
 
 .bg {
@@ -47,11 +53,11 @@
 .hTitle {
   margin-top: 50px;
   font-size: 72px;
-  color: pink;
+  color: #03031B;
 }
 
 .hTitle span {
-  color: white;
+  color: #2B7B8C;
 }
 
 .awards {
@@ -60,14 +66,15 @@
 }
 
 .awards h2 {
-  color: white;
+  color: #03031B;
   font-size: 32px;
 }
 
 .awards p {
   font-size: 16px;
-  color: #ddd;
+  color: #445566;
   margin: 20px 0px;
+  line-height: 1.6;
 }
 
 .awardList {
@@ -79,8 +86,14 @@
   width: 48px;
   height: 48px;
   padding: 10px;
-  background-color: white;
+  background-color: #BBDDE1;
   border-radius: 100%;
+  box-shadow: 0 4px 12px rgba(187, 221, 225, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.awardList img:hover {
+  transform: translateY(-3px);
 }
 
 .hSection.right {
@@ -92,8 +105,9 @@
   flex-direction: column;
   gap: 12px;
   padding: 16px;
-  background-color: #2f204e;
+  background-color: #FFFFFF;
   border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 20px rgba(3, 3, 27, 0.08);
 }
 
 .follow img {
@@ -108,7 +122,7 @@
 
 .followText {
   font-size: 12px;
-  color: white;
+  color: #445566;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
 }
@@ -120,10 +134,11 @@
   line-height: 1.2;
   margin-bottom: 40px;
   padding-right: 0;
+  color: #03031B;
 }
 
 .tagline span {
-  color: white;
+  color: #2B7B8C;
   display: inline-block;
 }
 
@@ -144,31 +159,32 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .actionButton.resume {
-  background-color: pink;
-  color: #2f204e;
+  background-color: #BBDDE1;
+  color: #03031B;
   border: none;
 }
 
 .actionButton.contact {
   background-color: transparent;
-  color: white;
-  border: 2px solid pink;
+  color: #2B7B8C;
+  border: 2px solid #BBDDE1;
 }
 
 .actionButton.resume:hover {
-  background-color: #ff9eb5;
+  background-color: #2B7B8C;
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(43, 123, 140, 0.2);
 }
 
 .actionButton.contact:hover {
-  background-color: rgba(255, 192, 203, 0.1);
+  background-color: rgba(187, 221, 225, 0.1);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(187, 221, 225, 0.2);
 }
 
 .actionButton svg {
@@ -191,17 +207,24 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    to bottom,
-    rgba(47, 32, 78, 0.2),
-    rgba(47, 32, 78, 0.4)
+    135deg,
+    rgba(187, 221, 225, 0.2),
+    rgba(191, 227, 204, 0.3)
   );
   border-radius: 30px;
   overflow: hidden;
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.2),
-    0 0 80px rgba(255, 192, 203, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    0 20px 40px rgba(43, 123, 140, 0.1),
+    0 0 80px rgba(187, 221, 225, 0.1);
+  border: 1px solid rgba(187, 221, 225, 0.2);
   transition: all 0.3s ease;
+}
+
+.heroImage:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 25px 50px rgba(43, 123, 140, 0.15),
+    0 0 100px rgba(187, 221, 225, 0.2);
 }
 
 .heroImage img {

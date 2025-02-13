@@ -1,10 +1,23 @@
 .skills {
   height: 100vh;
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+  background-color: #FDFBF7;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Gilroy', sans-serif;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(93, 162, 234, 0.1), transparent 60%),
+              radial-gradient(circle at bottom left, rgba(187, 221, 225, 0.15), transparent 60%);
+  pointer-events: none;
 }
 
 .wrapper {
@@ -15,23 +28,30 @@
   justify-content: center;
   gap: 50px;
   padding: 0 50px;
+  position: relative;
+  z-index: 1;
 }
 
 .textContainer {
   text-align: center;
-  color: white;
+  color: #03031B;
 }
 
 .textContainer h1 {
-  font-size: 56px;
+  font-size: 72px;
   margin-bottom: 20px;
   font-weight: 700;
+  color: #03031B;
+}
+
+.textContainer h1 span {
+  color: #2B7B8C;
 }
 
 .textContainer p {
   font-size: 24px;
   font-weight: 400;
-  color: gray;
+  color: #445566;
 }
 
 .categoriesContainer {
@@ -48,7 +68,7 @@
 .category h2 {
   font-size: 28px;
   margin-bottom: 24px;
-  color: white;
+  color: #2B7B8C;
 }
 
 .skillsList {
@@ -60,20 +80,23 @@
 .skillItem {
   padding: 20px;
   border-radius: 20px;
-  background-color: #2f213f;
+  background: #FFFFFF;
   transition: all 0.3s ease;
+  border: 1px solid rgba(187, 221, 225, 0.3);
+  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.05);
 }
 
 .skillItem:hover {
-  background-color: #3f2c54;
   transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(43, 123, 140, 0.1);
+  border: 1px solid rgba(93, 162, 234, 0.2);
 }
 
 .skillInfo {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
-  color: white;
+  margin-bottom: 12px;
+  color: #03031B;
   font-size: 16px;
   font-weight: 500;
 }
@@ -81,15 +104,16 @@
 .progressBar {
   width: 100%;
   height: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #D9D9D9;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .progress {
   height: 100%;
-  background: linear-gradient(to right, #dd4c62, #e6746c);
+  background: linear-gradient(to right, #BBDDE1, #5DA2EA);
   border-radius: 10px;
+  transition: width 0.5s ease-in-out;
 }
 
 @media (max-width: 1280px) {

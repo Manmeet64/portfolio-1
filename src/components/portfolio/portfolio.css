@@ -1,6 +1,7 @@
 .portfolio {
   height: 600vh;
   position: relative;
+  background-color: #FDFBF7;
 }
 
 .pList {
@@ -9,6 +10,7 @@
   display: flex;
   height: 100vh;
   width: max-content;
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .pItem {
@@ -19,59 +21,81 @@
   align-items: center;
   justify-content: center;
   gap: 100px;
+  position: relative;
+  padding: 0 50px;
 }
 
-/* .pItem:nth-child(1) {
-  background: linear-gradient(to right, #12071f, #210b3a);
+/* Refined gradients for smoother transitions */
+.pItem:nth-child(1) {
+  background: linear-gradient(135deg, rgba(253, 251, 247, 0.98), rgba(187, 221, 225, 0.05));
 }
+
 .pItem:nth-child(2) {
-  background: linear-gradient(to right, #210b3a, #27084a);
+  background: linear-gradient(135deg, rgba(187, 221, 225, 0.05), rgba(93, 162, 234, 0.05));
 }
-.pItem:nth-child(3) {
-  background: linear-gradient(to right, #27084a, #220345);
-}
-.pItem:nth-child(4) {
-  background: linear-gradient(to right, #220345, #2a0159);
-}
-.pItem:nth-child(5) {
-  background: linear-gradient(to right, #2a0159, #12071f);
-} */
 
-/* WE'LL NOT GIVE BACKGROUND COLOR TO THE FIRST AND LAST ITEMS (to keep scrolling effect consistent) */
 .pItem:nth-child(3) {
-  background: linear-gradient(to right, transparent, #260622);
+  background: linear-gradient(135deg, rgba(93, 162, 234, 0.05), rgba(43, 123, 140, 0.05));
 }
 
 .pItem:nth-child(4) {
-  background: linear-gradient(to right, #260622, #02222e);
+  background: linear-gradient(135deg, rgba(43, 123, 140, 0.05), rgba(217, 217, 217, 0.1));
 }
 
 .pItem:nth-child(5) {
-  background: linear-gradient(to right, #02222e, #12071f);
-}
-
-.pItem:nth-child(6) {
-  background: linear-gradient(to right, #12071f, transparent);
+  background: linear-gradient(135deg, rgba(217, 217, 217, 0.1), rgba(253, 251, 247, 0.98));
 }
 
 .pProgress {
   position: sticky;
   width: 80px;
   height: 80px;
-  left: 0;
-  bottom: 80%;
+  left: 40px;
+  bottom: 40px;
+  filter: drop-shadow(0 4px 12px rgba(43, 123, 140, 0.15));
+}
+
+.pProgress circle {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* Updated progress circle colors */
+.pProgress circle:first-child {
+  stroke: rgba(187, 221, 225, 0.3);
+}
+
+.pProgress circle:last-child {
+  stroke: #2B7B8C;
 }
 
 .pImg {
   width: 40%;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(43, 123, 140, 0.15),
+    0 0 80px rgba(187, 221, 225, 0.2);
+  border: 1px solid rgba(187, 221, 225, 0.3);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.pImg:hover {
+  transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
+  box-shadow: 
+    25px 25px 50px rgba(43, 123, 140, 0.2),
+    0 0 100px rgba(187, 221, 225, 0.3);
 }
 
 .pImg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pImg:hover img {
+  transform: scale(1.05);
 }
 
 .pText {
@@ -79,50 +103,86 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  color: #03031B;
 }
 
 .pText h1 {
   font-size: 56px;
+  background: linear-gradient(135deg, #03031B, #2B7B8C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
 }
 
 .pText p {
   font-weight: 300;
+  color: #445566;
+  line-height: 1.8;
+  font-size: 18px;
 }
 
 .pText button {
-  background-color: pink;
-  padding: 12px;
-  border-radius: 10px;
+  background-color: #BBDDE1;
+  padding: 15px 40px;
+  border-radius: 8px;
   border: none;
   font-weight: 500;
   cursor: pointer;
+  color: #03031B;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0 4px 15px rgba(43, 123, 140, 0.1);
+  width: fit-content;
+  letter-spacing: 0.5px;
+}
+
+.pText button:hover {
+  background-color: #2B7B8C;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(43, 123, 140, 0.2);
 }
 
 @media (max-width: 1536px) {
   .pItem {
     gap: 50px;
+    padding: 0 40px;
+  }
+  
+  .pText h1 {
+    font-size: 48px;
   }
 }
 
 @media (max-width: 1280px) {
   .pText h1 {
-    font-size: 48px;
+    font-size: 42px;
+  }
+  
+  .pText p {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 1024px) {
   .pItem {
     flex-direction: column;
+    padding: 20px;
   }
 
   .pImg,
   .pText {
-    width: 80%;
+    width: 90%;
   }
 
   .pProgress {
-    bottom: 100px;
-    left: 100%;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .pText {
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -130,5 +190,22 @@
   .pProgress {
     width: 50px;
     height: 50px;
+  }
+  
+  .pText h1 {
+    font-size: 32px;
+  }
+  
+  .pText p {
+    font-size: 14px;
+  }
+  
+  .pText button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+  
+  .pImg {
+    width: 100%;
   }
 }

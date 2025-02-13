@@ -1,16 +1,15 @@
-.contact {
+.contactContainer {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  gap: 60px;
   background-color: #FDFBF7;
   position: relative;
   font-family: 'Gilroy', sans-serif;
-  padding: 40px;
+  padding: 60px 40px;
   overflow: hidden;
 }
 
-.contact::before {
+.contactContainer::before {
   content: '';
   position: absolute;
   top: 0;
@@ -23,23 +22,25 @@
   pointer-events: none;
 }
 
-.cSection {
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  gap: 60px;
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.cSection:first-child {
+.formSection {
   flex: 0.8;
   min-width: 320px;
 }
 
-.cSection:last-child {
-  flex: 1.2;
-  min-width: 400px;
-  padding: 40px;
+.imageSection {
+  flex: 1;
+  min-width: 320px;
+  padding: 30px;
   background: linear-gradient(135deg, 
     rgba(187, 221, 225, 0.05) 0%,
     rgba(93, 162, 234, 0.05) 50%,
@@ -50,20 +51,30 @@
     0 20px 40px rgba(43, 123, 140, 0.05),
     0 0 80px rgba(138, 43, 226, 0.05);
   border: 1px solid rgba(187, 221, 225, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cTitle {
+.imageSection svg {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  max-height: 450px;
+}
+
+.title {
   font-size: 48px;
   color: #03031B;
   margin-bottom: 30px;
   line-height: 1.2;
 }
 
-.cTitle span {
+.title span {
   color: #2B7B8C;
 }
 
-form {
+.form {
   width: 100%;
   max-width: 450px;
   display: flex;
@@ -78,25 +89,25 @@ form {
   transition: all 0.3s ease;
 }
 
-form:hover {
+.form:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(43, 123, 140, 0.12);
 }
 
-.formItem {
+.inputGroup {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-label {
+.label {
   font-size: 14px;
   color: #2B7B8C;
   font-weight: 500;
 }
 
-input,
-textarea {
+.input,
+.textarea {
   padding: 12px 16px;
   border: 1px solid rgba(187, 221, 225, 0.3);
   border-radius: 8px;
@@ -107,20 +118,20 @@ textarea {
   transition: all 0.3s ease;
 }
 
-input:focus,
-textarea:focus {
+.input:focus,
+.textarea:focus {
   outline: none;
   border-color: #2B7B8C;
   box-shadow: 0 0 0 3px rgba(43, 123, 140, 0.1);
 }
 
-textarea {
+.textarea {
   resize: vertical;
   min-height: 120px;
   max-height: 200px;
 }
 
-.formButton {
+.button {
   background-color: #BBDDE1;
   color: #03031B;
   padding: 14px 32px;
@@ -132,17 +143,16 @@ textarea {
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(43, 123, 140, 0.1);
   width: fit-content;
-  align-self: flex-start;
 }
 
-.formButton:hover {
+.button:hover {
   background-color: #2B7B8C;
   color: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(43, 123, 140, 0.2);
 }
 
-form span {
+.message {
   font-size: 14px;
   color: #2B7B8C;
   align-self: center;
@@ -164,83 +174,99 @@ form span {
 }
 
 @media (max-width: 1280px) {
-  .contact {
-    padding: 30px;
+  .contactContainer {
+    padding: 40px 30px;
+  }
+  
+  .contentWrapper {
     gap: 40px;
   }
   
-  .cTitle {
+  .title {
     font-size: 42px;
   }
 }
 
 @media (max-width: 1024px) {
-  .contact {
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px;
+  .contactContainer {
+    padding: 30px 20px;
   }
   
-  .cSection:first-child,
-  .cSection:last-child {
-    flex: 1;
+  .contentWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .formSection,
+  .imageSection {
     width: 100%;
     min-width: unset;
   }
   
-  .cSection:last-child {
-    padding: 30px;
+  .imageSection {
+    padding: 25px;
+    max-height: 300px;
+  }
+  
+  .imageSection svg {
+    max-width: 350px;
     max-height: 350px;
   }
   
-  form {
+  .form {
     max-width: 500px;
-    padding: 30px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .contact {
-    padding: 15px;
+  .contactContainer {
+    padding: 20px 15px;
   }
   
-  .cSection:last-child {
+  .imageSection {
     padding: 20px;
-    max-height: 300px;
+    max-height: 250px;
   }
   
-  .cTitle {
+  .imageSection svg {
+    max-width: 280px;
+    max-height: 280px;
+  }
+  
+  .title {
     font-size: 36px;
     text-align: center;
   }
   
-  form {
-    padding: 25px;
-  }
-  
-  .formButton {
+  .button {
     width: 100%;
     text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .cSection:last-child {
-    max-height: 250px;
+  .imageSection {
+    max-height: 200px;
   }
   
-  form {
+  .imageSection svg {
+    max-width: 220px;
+    max-height: 220px;
+  }
+  
+  .form {
     padding: 20px;
   }
   
-  input,
-  textarea {
+  .input,
+  .textarea {
     font-size: 14px;
     padding: 10px 14px;
   }
   
-  .formButton {
+  .button {
     padding: 12px 24px;
     font-size: 14px;
   }
-}
+} 
