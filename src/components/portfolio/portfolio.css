@@ -2,6 +2,7 @@
   height: 600vh;
   position: relative;
   background-color: #FDFBF7;
+  scroll-behavior: smooth;
 }
 
 .pList {
@@ -10,7 +11,15 @@
   display: flex;
   height: 100vh;
   width: max-content;
-  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .pItem {
@@ -23,6 +32,8 @@
   gap: 100px;
   position: relative;
   padding: 0 50px;
+  transition: opacity 0.5s ease;
+  will-change: opacity;
 }
 
 /* Refined gradients for smoother transitions */

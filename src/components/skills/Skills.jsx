@@ -43,15 +43,62 @@ const Skills = () => {
     }
   ];
   
+  const containerVariants = {
+    initial: { opacity: 0, y: 30 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const categoryVariants = {
+    initial: { opacity: 0, x: -30 },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const skillItemVariants = {
+    initial: { opacity: 0, y: 10 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const progressVariants = {
+    initial: { width: 0 },
+    animate: (level) => ({
+      width: `${level}%`,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+  };
 
   return (
     <div className={styles.skills}>
       <div className={styles.wrapper}>
         <motion.div 
           className={styles.textContainer}
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          variants={containerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-50px" }}
         >
           <h1>Skills & Expertise</h1>
           <p>Crafting digital experiences with modern technologies</p>
@@ -62,9 +109,11 @@ const Skills = () => {
             <motion.div 
               className={styles.category}
               key={categoryIndex}
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
+              variants={categoryVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: categoryIndex * 0.1 }}
             >
               <h2>{category.title}</h2>
               <div className={styles.skillsList}>
@@ -72,9 +121,11 @@ const Skills = () => {
                   <motion.div 
                     className={styles.skillItem}
                     key={index}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    variants={skillItemVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
                   >
                     <div className={styles.skillInfo}>
                       <span>{skill.name}</span>
@@ -83,9 +134,11 @@ const Skills = () => {
                     <div className={styles.progressBar}>
                       <motion.div 
                         className={styles.progress}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
+                        variants={progressVariants}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        custom={skill.level}
                       />
                     </div>
                   </motion.div>

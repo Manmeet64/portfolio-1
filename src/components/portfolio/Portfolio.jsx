@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./portfolio.css";
-import { motion, useInView, useScroll, useTransform } from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 const items = [
   {
@@ -42,61 +42,87 @@ const items = [
 
 const imgVariants = {
   initial: {
-    x: -500,
-    y: 500,
+    x: -50,
     opacity: 0,
   },
   animate: {
     x: 0,
-    y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      ease: "easeInOut",
+      duration: 0.4,
+      ease: "easeOut",
     },
+  },
+  exit: {
+    x: 0,
+    opacity: 0,
   },
 };
 
 const textVariants = {
   initial: {
-    x: 500,
-    y: 500,
+    x: 50,
     opacity: 0,
   },
   animate: {
     x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      delay: 0.1,
+      ease: "easeOut",
+      staggerChildren: 0.05,
+    },
+  },
+  exit: {
+    x: 0,
+    opacity: 0,
+  },
+};
+
+const childTextVariants = {
+  initial: {
+    y: 10,
+    opacity: 0,
+  },
+  animate: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-      staggerChildren: 0.05,
+      duration: 0.2,
+      ease: "easeOut",
     },
   },
 };
 
 const ListItem = ({ item }) => {
   const ref = useRef();
-
-  const isInView = useInView(ref, { margin: "-100px" });
+  const isInView = useInView(ref, { 
+    margin: "-50px",
+    once: true
+  });
 
   return (
     <div className="pItem" ref={ref}>
       <motion.div
         variants={imgVariants}
+        initial="initial"
         animate={isInView ? "animate" : "initial"}
+        exit="exit"
         className="pImg"
       >
         <img src={item.img} alt="" />
       </motion.div>
       <motion.div
         variants={textVariants}
+        initial="initial"
         animate={isInView ? "animate" : "initial"}
+        exit="exit"
         className="pText"
       >
-        <motion.h1 variants={textVariants}>{item.title}</motion.h1>
-        <motion.p variants={textVariants}>{item.desc}</motion.p>
-        <motion.a variants={textVariants} href={item.link}>
+        <motion.h1 variants={childTextVariants}>{item.title}</motion.h1>
+        <motion.p variants={childTextVariants}>{item.desc}</motion.p>
+        <motion.a variants={childTextVariants} href={item.link}>
           <button>View Project</button>
         </motion.a>
       </motion.div>
@@ -108,14 +134,6 @@ const Portfolio = () => {
   const [containerDistance, setContainerDistance] = useState(0);
   const ref = useRef(null);
 
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     const rect = ref.current.getBoundingClientRect();
-  //     setContainerDistance(rect.left);
-  //   }
-  // }, []);
-
-  // FIX: Re-calculate when screen size changes
   useEffect(() => {
     const calculateDistance = () => {
       if (ref.current) {
@@ -125,30 +143,37 @@ const Portfolio = () => {
     };
 
     calculateDistance();
-
     window.addEventListener("resize", calculateDistance);
-
-    return () => {
-      window.removeEventListener("resize", calculateDistance);
-    };
+    return () => window.removeEventListener("resize", calculateDistance);
   }, []);
 
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll({ 
+    target: ref,
+    offset: ["start start", "end end"],
+  });
 
   const xTranslate = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, -window.innerWidth * items.length]
+    [0, -window.innerWidth * items.length],
+    { 
+      damping: 20,
+      stiffness: 90,
+      mass: 1
+    }
   );
 
   return (
     <div className="portfolio" ref={ref}>
-      <motion.div className="pList" style={{ x: xTranslate }}>
+      <motion.div 
+        className="pList" 
+        style={{ x: xTranslate }}
+        initial={false}
+      >
         <div
           className="empty"
           style={{
             width: window.innerWidth - containerDistance,
-            // backgroundColor: "pink",
           }}
         />
         {items.map((item) => (
@@ -175,7 +200,7 @@ const Portfolio = () => {
             cy="80"
             r="70"
             fill="none"
-            stroke="#2B7B8C"
+            stroke="#dd4c62"
             strokeWidth={20}
             style={{ pathLength: scrollYProgress }}
             transform="rotate(-90 80 80)"
