@@ -1,9 +1,6 @@
-import { Canvas } from "@react-three/fiber";
-import "./hero.css";
-import Speech from "./Speech";
 import { motion } from "motion/react";
-import Shape from "./Shape";
-import { Suspense } from "react";
+import "./hero.css";
+import { Download, Send } from 'lucide-react';
 
 const awardVariants = {
   initial: {
@@ -67,45 +64,32 @@ const Hero = () => {
             <motion.img variants={awardVariants} src="/award3.png" alt="" />
           </motion.div>
         </motion.div>
-        {/* SCROLL SVG */}
-        <motion.a
-          animate={{ y: [0, 5], opacity: [0, 1, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 4,
-            ease: "easeInOut",
-          }}
-          href="#services"
-          className="scroll"
-        >
-          <svg
-            width="50px"
-            height="50px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 9C5 5.13401 8.13401 2 12 2C15.866 2 19 5.13401 19 9V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9Z"
-              stroke="white"
-              strokeWidth="1"
-            />
-            <motion.path
-              animate={{ y: [0, 5] }}
-              transition={{
-                repeat: Infinity,
-                duration: 4,
-                ease: "easeInOut",
-              }}
-              d="M12 5V8"
-              stroke="white"
-              strokeWidth="1"
-              strokeLinecap="round"
-            />
-          </svg>
-        </motion.a>
       </div>
+
+      {/* Center Image Container */}
+      <motion.div 
+        className="imageContainer"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <div className="heroImage">
+          <img src="/hero.png" alt="Profile" />
+        </div>
+      </motion.div>
+
       <div className="hSection right">
+        {/* Moved tagline to top */}
+        <motion.h2
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="hTitle tagline"
+        >
+          Turning Ideas
+          <br />
+          <span>Into Reality</span>
+        </motion.h2>
         {/* FOLLOW */}
         <motion.div
           variants={followVariants}
@@ -126,85 +110,33 @@ const Hero = () => {
             <div className="followText">FOLLOW ME</div>
           </motion.div>
         </motion.div>
-        {/* BUBBLE */}
-        <Speech />
-        {/* CERTIFICATE */}
-        <motion.div
-          animate={{ opacity: [0, 1] }}
+        {/* Action Buttons at bottom */}
+        <motion.div 
+          className="actionButtons"
+          initial={{ x: 200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="certificate"
         >
-          <img src="/certificate.png" alt="" />
-          LMA CERTIFICED
-          <br />
-          PROFESSIONAL
-          <br />
-          UI DESIGNER
-        </motion.div>
-        {/* CONTACT BUTTON */}
-        <motion.a
-          href="/#contact"
-          className="contactLink"
-          animate={{
-            x: [200, 0],
-            opacity: [0, 1],
-          }}
-          transition={{
-            duration: 2,
-          }}
-        >
-          <motion.div
-            className="contactButton"
-            animate={{ rotate: [0, 360] }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "linear",
-            }}
+          <motion.a 
+            href="/resume.pdf" 
+            className="actionButton resume"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <svg viewBox="0 0 200 200" width="150" height="150">
-              <circle cx="100" cy="100" r="90" fill="pink" />
-              <path
-                id="innerCirclePath"
-                fill="none"
-                d="M 100,100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
-              />
-              <text className="circleText">
-                <textPath href="#innerCirclePath">Hire Now •</textPath>
-              </text>
-              <text className="circleText">
-                <textPath href="#innerCirclePath" startOffset="44%">
-                  Contact Me •
-                </textPath>
-              </text>
-            </svg>
-            <div className="arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="50"
-                height="50"
-                fill="none"
-                stroke="black"
-                strokeWidth="2"
-              >
-                <line x1="6" y1="18" x2="18" y2="6" />
-                <polyline points="9 6 18 6 18 15" />
-              </svg>
-            </div>
-          </motion.div>
-        </motion.a>
-      </div>
-      <div className="bg">
-        {/* 3d */}
-        <Canvas>
-          <Suspense fallback="loading...">
-            <Shape />
-          </Suspense>
-        </Canvas>
-        <div className="hImg">
-          <img src="/hero.png" alt="" />
-        </div>
+            <span>Resume</span>
+            <Download size={20} />
+          </motion.a>
+          
+          <motion.a 
+            href="#contact" 
+            className="actionButton contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>Contact</span>
+            <Send size={20} />
+          </motion.a>
+        </motion.div>
       </div>
     </div>
   );

@@ -7,7 +7,8 @@ import { lazy, Suspense } from "react";
 import LazyLoad from "react-lazyload";
 
 const Hero = lazy(() => import("./components/hero/Hero"));
-const Services = lazy(() => import("./components/services/Services"));
+const About = lazy(() => import("./components/experiance/About"));
+const Skills = lazy(() => import("./components/skills/Skills"));
 const Portfolio = lazy(() => import("./components/portfolio/Portfolio"));
 const Contact = lazy(() => import("./components/contact/Contact"));
 
@@ -15,31 +16,36 @@ const App = () => {
   return (
     <div className="container">
       <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#home">
+        <LazyLoad height={"100vh"} offset={100}>
+          <section id="home">
             <Hero />
           </section>
         </LazyLoad>
       </Suspense>
       <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#services">
-            <Services />
-          </section>{" "}
+        <LazyLoad height={"100vh"} offset={100}>
+          <section id="about">
+            <About />
+          </section>
         </LazyLoad>
       </Suspense>
       <Suspense fallback={"loading..."}>
-        <LazyLoad height={"600vh"} offset={-100}>
-          {/* <section id="#portfolio"> */}
+        <LazyLoad height={"100vh"} offset={100}>
+          <section id="skills">
+            <Skills />
+          </section>
+        </LazyLoad>
+      </Suspense>
+      <Suspense fallback={"loading..."}>
+        <LazyLoad height={"100vh"} offset={100}>
           <Portfolio />
-          {/* </section> */}{" "}
         </LazyLoad>
       </Suspense>
       <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#contact">
+        <LazyLoad height={"100vh"} offset={100}>
+          <section id="contact">
             <Contact />
-          </section>{" "}
+          </section>
         </LazyLoad>
       </Suspense>
     </div>
