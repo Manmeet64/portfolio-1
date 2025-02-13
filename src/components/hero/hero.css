@@ -11,6 +11,7 @@
   background-color: #FDFBF7;
   justify-content: space-between;
   font-family: 'Gilroy', sans-serif;
+  padding-top: 80px;
 }
 
 .bg {
@@ -51,7 +52,7 @@
 }
 
 .hTitle {
-  margin-top: 50px;
+  margin-top: 20px;
   font-size: 72px;
   color: #03031B;
 }
@@ -100,31 +101,31 @@
   align-items: flex-end;
 }
 
-.follow {
+.socialLinks {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 24px;
   padding: 16px;
-  background-color: #FFFFFF;
-  border-bottom-right-radius: 10px;
-  box-shadow: 0 4px 20px rgba(3, 3, 27, 0.08);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
 }
 
-.follow img {
-  width: 20px;
-  cursor: pointer;
+.socialLinks a {
+  color: #03031B;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(187, 221, 225, 0.1);
 }
 
-.followTextContainer {
-  position: relative;
-  margin-top: 8px;
-}
-
-.followText {
-  font-size: 12px;
-  color: #445566;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
+.socialLinks a:hover {
+  color: #2B7B8C;
+  opacity: 1;
+  background: rgba(187, 221, 225, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Tagline Styles */
@@ -195,12 +196,12 @@
 .imageContainer {
   position: relative;
   width: 30%;
-  height: 80vh;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .heroImage {
@@ -276,6 +277,7 @@
   .hero {
     flex-direction: column;
     align-items: center;
+    padding-top: 60px;
   }
 
   .hSection {
@@ -320,5 +322,14 @@
 
   .awards h2 {
     font-size: 24px;
+  }
+
+  .socialLinks {
+    padding: 12px;
+    gap: 16px;
+  }
+  
+  .socialLinks a {
+    padding: 6px;
   }
 }

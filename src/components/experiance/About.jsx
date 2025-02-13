@@ -174,7 +174,7 @@ const About = () => {
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className={`${styles.card} card`}
+            className={${styles.card} card}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}

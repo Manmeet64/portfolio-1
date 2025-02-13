@@ -44,36 +44,36 @@ const Skills = () => {
   ];
   
   const containerVariants = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 50 },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.8,
         ease: "easeOut"
       }
     }
   };
 
   const categoryVariants = {
-    initial: { opacity: 0, x: -30 },
+    initial: { opacity: 0, x: -50 },
     animate: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.6,
         ease: "easeOut"
       }
     }
   };
 
   const skillItemVariants = {
-    initial: { opacity: 0, y: 10 },
+    initial: { opacity: 0, y: 20 },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.5,
         ease: "easeOut"
       }
     }
@@ -84,8 +84,9 @@ const Skills = () => {
     animate: (level) => ({
       width: `${level}%`,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 1,
+        ease: "easeOut",
+        delay: 0.2
       }
     })
   };
@@ -98,7 +99,7 @@ const Skills = () => {
           variants={containerVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           <h1>Skills & Expertise</h1>
           <p>Crafting digital experiences with modern technologies</p>
@@ -112,8 +113,8 @@ const Skills = () => {
               variants={categoryVariants}
               initial="initial"
               whileInView="animate"
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: categoryIndex * 0.1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: categoryIndex * 0.03 }}
             >
               <h2>{category.title}</h2>
               <div className={styles.skillsList}>
@@ -124,8 +125,8 @@ const Skills = () => {
                     variants={skillItemVariants}
                     initial="initial"
                     whileInView="animate"
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ delay: index * 0.01 }}
                   >
                     <div className={styles.skillInfo}>
                       <span>{skill.name}</span>
@@ -137,7 +138,7 @@ const Skills = () => {
                         variants={progressVariants}
                         initial="initial"
                         whileInView="animate"
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         custom={skill.level}
                       />
                     </div>

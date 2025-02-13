@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import "./hero.css";
-import { Download, Send } from 'lucide-react';
+import { Download, Send, Instagram, Linkedin, Github } from "lucide-react";
 
 const awardVariants = {
   initial: {
@@ -17,7 +17,7 @@ const awardVariants = {
   },
 };
 
-const followVariants = {
+const socialVariants = {
   initial: {
     y: -100,
     opacity: 0,
@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero">
+    <div className="hero" id="home">
       <div className="hSection left">
         {/* TITLE */}
         <motion.h1
@@ -107,25 +107,43 @@ const Hero = () => {
           <br />
           <span>Enhancing Lives.</span>
         </motion.h2>
-        {/* FOLLOW */}
+        {/* Updated social links section */}
         <motion.div
-          variants={followVariants}
+          variants={socialVariants}
           initial="initial"
           animate="animate"
-          className="follow"
+          className="socialLinks"
         >
-          <motion.a variants={followVariants} href="/">
-            <img src="/instagram.png" alt="" />
+          <motion.a 
+            href="https://instagram.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={socialVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Instagram size={24} />
           </motion.a>
-          <motion.a variants={followVariants} href="/">
-            <img src="/facebook.png" alt="" />
+          <motion.a 
+            href="https://linkedin.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={socialVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Linkedin size={24} />
           </motion.a>
-          <motion.a variants={followVariants} href="/">
-            <img src="/youtube.png" alt="" />
+          <motion.a 
+            href="https://github.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={socialVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Github size={24} />
           </motion.a>
-          <motion.div variants={followVariants} className="followTextContainer">
-            <div className="followText">FOLLOW ME</div>
-          </motion.div>
         </motion.div>
         {/* Action Buttons at bottom */}
         <motion.div 
