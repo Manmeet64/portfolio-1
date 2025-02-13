@@ -122,9 +122,24 @@ const ListItem = ({ item }) => {
       >
         <motion.h1 variants={childTextVariants}>{item.title}</motion.h1>
         <motion.p variants={childTextVariants}>{item.desc}</motion.p>
-        <motion.a variants={childTextVariants} href={item.link}>
-          <button>View Project</button>
-        </motion.a>
+        <motion.button variants={childTextVariants} className="projectButton">
+          <span>Live</span>
+          <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+              d="M7 17L17 7M17 7H7M17 7V17" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.button>
       </motion.div>
     </div>
   );
@@ -133,6 +148,10 @@ const ListItem = ({ item }) => {
 const Portfolio = () => {
   const [containerDistance, setContainerDistance] = useState(0);
   const ref = useRef(null);
+
+  // Add cursor functionality
+  const cursorRef = useRef(null);
+  const [isCursorVisible, setIsCursorVisible] = useState(false);
 
   useEffect(() => {
     const calculateDistance = () => {
@@ -163,8 +182,46 @@ const Portfolio = () => {
     }
   );
 
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    
+    const onMouseMove = (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    };
+
+    const onMouseEnter = () => {
+      setIsCursorVisible(true);
+    };
+
+    const onMouseLeave = () => {
+      setIsCursorVisible(false);
+    };
+
+    // Add listeners to all project images
+    const projectImages = document.querySelectorAll('.pImg');
+    projectImages.forEach(img => {
+      img.addEventListener('mouseenter', onMouseEnter);
+      img.addEventListener('mouseleave', onMouseLeave);
+    });
+
+    window.addEventListener('mousemove', onMouseMove);
+
+    return () => {
+      projectImages.forEach(img => {
+        img.removeEventListener('mouseenter', onMouseEnter);
+        img.removeEventListener('mouseleave', onMouseLeave);
+      });
+      window.removeEventListener('mousemove', onMouseMove);
+    };
+  }, []);
+
   return (
     <div className="portfolio" ref={ref}>
+      <div 
+        ref={cursorRef} 
+        className={`cursor-dot ${isCursorVisible ? 'active' : ''}`}
+      />
       <motion.div 
         className="pList" 
         style={{ x: xTranslate }}

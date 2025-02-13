@@ -1,38 +1,31 @@
 import ComputerModelContainer from "./computer/ComputerModelContainer";
-import ConsoleModelContainer from "./console/ConsoleModelContainer";
-import Counter from "./Counter";
-import MugModelContainer from "./mug/MugModelContainer";
 import "./services.css";
 import { motion, useInView } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const textVariants = {
   initial: {
-    x: -100,
-    y: -100,
+    x: -50,
     opacity: 0,
   },
   animate: {
     x: 0,
-    y: 0,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.8,
     },
   },
 };
 
 const listVariants = {
   initial: {
-    x: -100,
     opacity: 0,
   },
   animate: {
-    x: 0,
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.5,
+      duration: 0.5,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -41,27 +34,33 @@ const services = [
   {
     id: 1,
     img: "/service1.png",
-    title: "Web Development",
-    counter: 35,
+    title: "Full Stack Development",
+    desc: "Building end-to-end web applications",
   },
   {
     id: 2,
     img: "/service2.png",
-    title: "Product Design",
-    counter: 23,
+    title: "UI/UX Design",
+    desc: "Creating intuitive user experiences",
   },
   {
     id: 3,
     img: "/service3.png",
-    title: "Branding",
-    counter: 46,
+    title: "API Integration",
+    desc: "Seamless third-party integrations",
   },
+  {
+    id: 4,
+    img: "/service4.png",
+    title: "Database Design",
+    desc: "Optimized data architecture solutions",
+  }
 ];
 
 const Services = () => {
-  const [currentServiceId, setCurrentServiceId] = useState(1);
   const ref = useRef();
-  const isInView = useInView(ref, { margin: "-200px" });
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <div className="services" ref={ref}>
       <div className="sSection left">
@@ -82,31 +81,22 @@ const Services = () => {
               variants={listVariants}
               className="service"
               key={service.id}
-              onClick={() => setCurrentServiceId(service.id)}
             >
               <div className="serviceIcon">
                 <img src={service.img} alt="" />
               </div>
               <div className="serviceInfo">
                 <h2>{service.title}</h2>
-                <h3>{service.counter} Projects</h3>
+                <p>{service.desc}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
-        <div className="counterList">
-          <Counter from={0} to={104} text="Projects Completed" />
-          <Counter from={0} to={72} text="Happy Clients" />
-        </div>
       </div>
       <div className="sSection right">
-        {currentServiceId === 1 ? (
+        <div className="modelContainer">
           <ComputerModelContainer />
-        ) : currentServiceId === 2 ? (
-          <MugModelContainer />
-        ) : (
-          <ConsoleModelContainer />
-        )}
+        </div>
       </div>
     </div>
   );
