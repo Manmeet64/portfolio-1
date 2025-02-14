@@ -1,203 +1,205 @@
 .services {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  background-color: #FDFBF7;
-  padding: 0;
-  position: relative;
-  z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #fdfbf7;
+    padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .sSection {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 30px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
 }
 
 .sSection.right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
 }
 
 .modelContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: scale(0.65);
-  position: relative;
-  z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+    position: relative;
+    z-index: 2;
 }
 
 .sTitle {
-  font-size: 38px;
-  margin-bottom: 30px;
-  color: #03031B;
-  font-weight: 600;
+    font-size: 66px;
+    margin-bottom: 30px;
+    color: #03031b;
+    font-weight: 600;
 }
 
 .serviceList {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 550px;
 }
 
 .service {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  border: 1px solid rgba(43, 123, 140, 0.1);
-  transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgba(43, 123, 140, 0.1);
+    transition: all 0.3s ease;
 }
 
 .service:hover {
-  background: #FFFFFF;
-  transform: translateX(10px);
-  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
+    background: #ffffff;
+    transform: translateX(10px);
+    box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
 }
 
 .serviceIcon {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(43, 123, 140, 0.1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(43, 123, 140, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .serviceIcon img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(37%) sepia(74%) saturate(374%) hue-rotate(152deg) brightness(88%) contrast(89%);
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(37%) sepia(74%) saturate(374%)
+        hue-rotate(152deg) brightness(88%) contrast(89%);
 }
 
 .serviceInfo h2 {
-  font-size: 18px;
-  color: #2B7B8C;
-  margin-bottom: 4px;
-  font-weight: 500;
+    font-size: 18px;
+    color: #2b7b8c;
+    margin-bottom: 4px;
+    font-weight: 500;
 }
 
 .serviceInfo p {
-  font-size: 14px;
-  color: #03031B;
-  line-height: 1.4;
+    font-size: 14px;
+    color: #03031b;
+    line-height: 1.8;
+    font-weight: 500;
 }
 
 .service:nth-child(1) .serviceIcon,
 .service:nth-child(2) .serviceIcon,
 .service:nth-child(3) .serviceIcon,
 .service:nth-child(4) .serviceIcon {
-  background-color: rgba(43, 123, 140, 0.1);
+    background-color: rgba(43, 123, 140, 0.1);
 }
 
 .counterList {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 24px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
 }
 
 .counter {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .counter h1 {
-  font-size: 48px;
-  color: #dd4c62;
+    font-size: 48px;
+    color: #dd4c62;
 }
 
 .counter p {
-  font-size: 13px;
-  width: 120px;
+    font-size: 13px;
+    width: 120px;
 }
 
 @media (max-width: 1536px) {
-  .service,
-  .counterList {
-    width: 70%;
-  }
+    .service,
+    .counterList {
+        width: 70%;
+    }
 }
 
 @media (max-width: 1280px) {
-  .modelContainer {
-    transform: scale(0.55);
-  }
+    .modelContainer {
+        transform: scale(0.55);
+    }
 }
 
 @media (max-width: 1024px) {
-  .services {
-    flex-direction: column;
-    padding: 40px 20px;
-  }
+    .services {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
 
-  .sSection {
-    width: 100%;
-    padding: 0 15px;
-  }
+    .sSection {
+        width: 100%;
+        padding: 0 15px;
+    }
 
-  .sTitle {
-    font-size: 32px;
-    text-align: center;
-  }
+    .sTitle {
+        font-size: 32px;
+        text-align: center;
+    }
 
-  .serviceList {
-    margin: 0 auto;
-  }
+    .serviceList {
+        margin: 0 auto;
+    }
 
-  .service {
-    padding: 16px;
-  }
+    .service {
+        padding: 16px;
+    }
 
-  .modelContainer {
-    transform: scale(0.45);
-    height: 450px;
-  }
+    .modelContainer {
+        transform: scale(0.45);
+        height: 450px;
+    }
 }
 
 @media (max-width: 768px) {
-  .sSection.right {
-    display: none;
-  }
+    .sSection.right {
+        display: none;
+    }
 
-  .service {
-    padding: 14px;
-  }
+    .service {
+        padding: 14px;
+    }
 
-  .serviceIcon {
-    width: 45px;
-    height: 45px;
-  }
+    .serviceIcon {
+        width: 45px;
+        height: 45px;
+    }
 
-  .serviceIcon img {
-    width: 22px;
-    height: 22px;
-  }
+    .serviceIcon img {
+        width: 22px;
+        height: 22px;
+    }
 
-  .serviceInfo h2 {
-    font-size: 17px;
-  }
+    .serviceInfo h2 {
+        font-size: 17px;
+    }
 
-  .serviceInfo p {
-    font-size: 13px;
-  }
+    .serviceInfo p {
+        font-size: 13px;
+    }
 }

@@ -1,211 +1,212 @@
 .skills {
-  min-height: 150vh;
-  padding: 100px 20px 200px;
-  background-color: #FDFBF7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: visible;
-  margin-bottom: 100px;
-  scroll-snap-align: start;
-  scroll-margin-top: 80px;
+    min-height: 150vh;
+    padding: 100px 20px 200px;
+    background-color: #fdfbf7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 100px;
+    scroll-snap-align: start;
+    scroll-margin-top: 80px;
 }
 
 .skillsTitle {
-  text-align: center;
-  margin-bottom: 50px;
-  width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .skillsTitle h2 {
-  font-size: 42px;
-  color: #03031B;
-  margin-bottom: 10px;
+    font-size: 64px;
+    color: #03031b;
+    margin-bottom: 10px;
 }
 
 .skillsTitle p {
-  font-size: 18px;
-  color: #445566;
+    font-size: 30px;
+    color: #445566;
+    font-weight: 500;
 }
 
 .skillsContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .skillCategory {
-  background: #FFFFFF;
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
-  border: 1px solid rgba(187, 221, 225, 0.2);
-  height: fit-content;
-  position: relative;
-  z-index: 1;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
+    border: 1px solid rgba(187, 221, 225, 0.2);
+    height: fit-content;
+    position: relative;
+    z-index: 1;
 }
 
 .skillCategory h3 {
-  font-size: 24px;
-  color: #2B7B8C;
-  margin-bottom: 25px;
-  font-weight: 500;
+    font-size: 24px;
+    color: #2b7b8c;
+    margin-bottom: 25px;
+    font-weight: 500;
 }
 
 .skillsList {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .skillItem {
-  width: 100%;
+    width: 100%;
 }
 
 .skillInfo {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 16px;
-  color: #03031B;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #03031b;
 }
 
 .progressBar {
-  width: 100%;
-  height: 8px;
-  background-color: rgba(43, 123, 140, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(43, 123, 140, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .progress {
-  height: 100%;
-  background-color: #2B7B8C;
-  border-radius: 4px;
+    height: 100%;
+    background-color: #2b7b8c;
+    border-radius: 4px;
 }
 
 /* Responsive Breakpoints */
 @media (max-width: 1536px) {
-  .skillsContainer {
-    max-width: 1200px;
-    gap: 30px;
-  }
+    .skillsContainer {
+        max-width: 1200px;
+        gap: 30px;
+    }
 
-  .skillCategory {
-    padding: 30px;
-  }
+    .skillCategory {
+        padding: 30px;
+    }
 }
 
 @media (max-width: 1280px) {
-  .skillsContainer {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-  }
+    .skillsContainer {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+    }
 
-  .skillsTitle h2 {
-    font-size: 38px;
-  }
+    .skillsTitle h2 {
+        font-size: 38px;
+    }
 
-  .skillCategory h3 {
-    font-size: 22px;
-  }
+    .skillCategory h3 {
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 1024px) {
-  .skills {
-    padding: 80px 20px 160px;
-  }
+    .skills {
+        padding: 80px 20px 160px;
+    }
 
-  .skillsContainer {
-    gap: 25px;
-  }
+    .skillsContainer {
+        gap: 25px;
+    }
 
-  .skillCategory {
-    padding: 25px;
-  }
+    .skillCategory {
+        padding: 25px;
+    }
 
-  .skillsTitle h2 {
-    font-size: 34px;
-  }
+    .skillsTitle h2 {
+        font-size: 34px;
+    }
 
-  .skillInfo {
-    font-size: 15px;
-  }
+    .skillInfo {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 768px) {
-  .skills {
-    padding: 60px 15px 120px;
-  }
+    .skills {
+        padding: 60px 15px 120px;
+    }
 
-  .skillsContainer {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    gap: 20px;
-  }
+    .skillsContainer {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 20px;
+    }
 
-  .skillsTitle {
-    margin-bottom: 40px;
-  }
+    .skillsTitle {
+        margin-bottom: 40px;
+    }
 
-  .skillsTitle h2 {
-    font-size: 30px;
-  }
+    .skillsTitle h2 {
+        font-size: 30px;
+    }
 
-  .skillsTitle p {
-    font-size: 16px;
-  }
+    .skillsTitle p {
+        font-size: 16px;
+    }
 
-  .skillCategory h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
+    .skillCategory h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
 
-  .skillsList {
-    gap: 15px;
-  }
+    .skillsList {
+        gap: 15px;
+    }
 }
 
 @media (max-width: 480px) {
-  .skills {
-    padding: 40px 15px 100px;
-  }
+    .skills {
+        padding: 40px 15px 100px;
+    }
 
-  .skillsTitle h2 {
-    font-size: 28px;
-  }
+    .skillsTitle h2 {
+        font-size: 28px;
+    }
 
-  .skillCategory {
-    padding: 20px;
-  }
+    .skillCategory {
+        padding: 20px;
+    }
 
-  .skillInfo {
-    font-size: 14px;
-  }
+    .skillInfo {
+        font-size: 14px;
+    }
 
-  .progressBar {
-    height: 6px;
-  }
+    .progressBar {
+        height: 6px;
+    }
 }
 
 /* For very small screens */
 @media (max-width: 360px) {
-  .skillsTitle h2 {
-    font-size: 26px;
-  }
+    .skillsTitle h2 {
+        font-size: 26px;
+    }
 
-  .skillCategory {
-    padding: 15px;
-  }
+    .skillCategory {
+        padding: 15px;
+    }
 
-  .skillCategory h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
+    .skillCategory h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
 }

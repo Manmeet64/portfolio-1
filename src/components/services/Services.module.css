@@ -1,180 +1,196 @@
 .services {
-  min-height: 100vh;
-  background-color: #FDFBF7;
-  padding: 120px 0;
-  overflow: hidden;
-  position: relative;
+    min-height: 100vh;
+    background-color: #fdfbf7;
+    padding: 120px 0;
+    overflow: hidden;
+    position: relative;
 }
 
 .services::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at top right, rgba(93, 162, 234, 0.05), transparent 60%),
-              radial-gradient(circle at bottom left, rgba(187, 221, 225, 0.1), transparent 60%);
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            circle at top right,
+            rgba(93, 162, 234, 0.05),
+            transparent 60%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(187, 221, 225, 0.1),
+            transparent 60%
+        );
+    pointer-events: none;
 }
 
 .serviceTitle {
-  text-align: center;
-  margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .serviceTitle h2 {
-  font-size: 48px;
-  color: #03031B;
-  margin-bottom: 16px;
+    font-size: 48px;
+    color: #03031b;
+    margin-bottom: 16px;
 }
 
 .serviceTitle p {
-  font-size: 18px;
-  color: #445566;
+    font-size: 18px;
+    color: #445566;
 }
 
 .sliderContainer {
-  position: relative;
-  width: 100%;
-  height: 120px;
-  overflow: hidden;
-  margin: 40px 0;
-  background: linear-gradient(90deg, #FDFBF7, transparent 5%, transparent 95%, #FDFBF7);
-  mask-image: linear-gradient(90deg, 
-    transparent 0%, 
-    black 5%, 
-    black 95%, 
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(90deg, 
-    transparent 0%, 
-    black 5%, 
-    black 95%, 
-    transparent 100%
-  );
+    position: relative;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    margin: 40px 0;
+    background: linear-gradient(
+        90deg,
+        #fdfbf7,
+        transparent 5%,
+        transparent 95%,
+        #fdfbf7
+    );
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+    );
 }
 
 .slider {
-  position: absolute;
-  white-space: nowrap;
-  width: fit-content;
-  will-change: transform;
-  transform: translateZ(0);
+    position: absolute;
+    white-space: nowrap;
+    width: fit-content;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .text {
-  display: inline-block;
+    display: inline-block;
 }
 
 .text span {
-  font-size: 64px;
-  font-weight: 600;
-  color: #2B7B8C;
-  margin: 0 20px;
-  display: inline-block;
-  transition: color 0.3s ease;
+    font-size: 64px;
+    font-weight: 600;
+    color: #2b7b8c;
+    margin: 0 20px;
+    display: inline-block;
+    transition: color 0.3s ease;
 }
 
 .text span:hover {
-  color: #03031B;
+    color: #03031b;
 }
 
 .serviceCards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 40px;
-  max-width: 1366px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1366px;
+    margin: 0 auto;
 }
 
 .serviceCard {
-  background: #FFFFFF;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(187, 221, 225, 0.2);
-  will-change: transform;
-  transform: translateZ(0);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(187, 221, 225, 0.2);
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .serviceCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(43, 123, 140, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(43, 123, 140, 0.12);
 }
 
 .cardIcon {
-  width: 60px;
-  height: 60px;
-  background: rgba(187, 221, 225, 0.2);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgba(187, 221, 225, 0.2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .cardIcon span {
-  font-size: 32px;
+    font-size: 32px;
 }
 
 .serviceCard h3 {
-  font-size: 24px;
-  color: #03031B;
-  margin-bottom: 16px;
+    font-size: 24px;
+    color: #03031b;
+    margin-bottom: 16px;
 }
 
 .serviceCard p {
-  font-size: 16px;
-  color: #445566;
-  line-height: 1.6;
+    font-size: 16px;
+    color: #445566;
+    line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
-  .text span {
-    font-size: 48px;
-  }
-  
-  .serviceTitle h2 {
-    font-size: 36px;
-  }
+    .text span {
+        font-size: 48px;
+    }
+
+    .serviceTitle h2 {
+        font-size: 36px;
+    }
 }
 
 @media (max-width: 768px) {
-  .services {
-    padding: 60px 0;
-  }
+    .services {
+        padding: 60px 0;
+    }
 
-  .text span {
-    font-size: 36px;
-    margin: 0 15px;
-  }
+    .text span {
+        font-size: 36px;
+        margin: 0 15px;
+    }
 
-  .sliderContainer {
-    height: 80px;
-  }
+    .sliderContainer {
+        height: 80px;
+    }
 
-  .serviceCards {
-    padding: 20px;
-    gap: 20px;
-  }
+    .serviceCards {
+        padding: 20px;
+        gap: 20px;
+    }
 
-  .serviceCard {
-    padding: 20px;
-  }
+    .serviceCard {
+        padding: 20px;
+    }
 
-  .cardIcon {
-    width: 50px;
-    height: 50px;
-  }
+    .cardIcon {
+        width: 50px;
+        height: 50px;
+    }
 
-  .cardIcon span {
-    font-size: 24px;
-  }
+    .cardIcon span {
+        font-size: 24px;
+    }
 
-  .serviceCard h3 {
-    font-size: 20px;
-  }
-} 
+    .serviceCard h3 {
+        font-size: 20px;
+    }
+}
