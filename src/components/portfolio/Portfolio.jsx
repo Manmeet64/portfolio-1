@@ -5,40 +5,41 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    img: "/p1.jpg",
-    title: "Full Stack Blog Application",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+    img: "/Foodzy.jpg",
+    title: "Foodzy - Smart Food Delivery App",
+    desc: "A feature-rich food delivery app built with the MERN stack, offering advanced features like AI-powered food recommendations, sentiment analysis, and smart delivery route optimization using Neo4j. Includes real-time order tracking, group order splitting, and Stripe payment integration. Admin dashboard for managing restaurants, menus, and events.",
     link: "/",
   },
   {
     id: 2,
-    img: "/p2.jpg",
-    title: "School Management System",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+    img: "/surge.jpg",
+    title: "Surge - AI Sales Assistant",
+    desc: "Developed in a hackathon, Surge is an AI-powered sales assistant that analyzes sales calls, generates micro-learning flashcards based on company scripts, and enables AI-driven agentic calls for frequently asked questions. Integrated Eleven Labs, Gemini API, and advanced API scraping techniques using React (TSX) and Tailwind CSS.",
     link: "/",
   },
   {
     id: 3,
-    img: "/p3.jpg",
-    title: "Real-time Chat Application",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+    img: "/bigo.jpg",
+    title: "BigO - Gamified Flashcard Learning",
+    desc: "A hackathon-built MERN stack app that lets users create personalized flashcard decks with a unique gamification experience. Focused on computer science learning paths, it offers friend battles, prebuilt challenges, and global leaderboards for competitive learning. Built with React (TSX) and Tailwind CSS.",
     link: "/",
   },
   {
     id: 4,
-    img: "/p4.jpg",
-    title: "Social Media Project",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+    img: "/rentease.jpg",
+    title: "RentEase - Zoom Car Clone",
+    desc: "Created 'RentEase', a car rental platform inspired by Zoom Car, built using React JS and JSON Server. Features filter-based search, booking functionality, and dynamic car listings. Designed with a smooth and intuitive UI/UX for a seamless rental experience.",
     link: "/",
   },
   {
     id: 5,
-    img: "/p5.jpg",
-    title: "Animated Portfolio Website",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
+    img: "/portfolio.png",
+    title: "3D Animated Portfolio Website",
+    desc: "A visually appealing and interactive portfolio website showcasing projects, skills, and experience. Designed with smooth animations, 3D effects, and responsive layouts using React, Framer Motion, and Tailwind CSS.",
     link: "/",
   },
 ];
+
 
 const imgVariants = {
   initial: {

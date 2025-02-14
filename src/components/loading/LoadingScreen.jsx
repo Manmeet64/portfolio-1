@@ -31,18 +31,40 @@ const LoadingScreen = ({ setIsLoading }) => {
         >
           <svg 
             viewBox="0 0 24 24" 
-            className="prayer-icon"
+            className="sardar-icon"
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path 
-              d="M12 4c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm6 6.5c0-.83-.67-1.5-1.5-1.5h-3.87l1.87-3.23.13-.22c.43-.74.43-1.68.43-1.68 0-.93-.75-1.69-1.69-1.69-.93 0-1.69.76-1.69 1.69l-.03.19c-.08.56-.33 1.23-.8 1.71L8.87 9H5.5C4.67 9 4 9.67 4 10.5v8.15l3.02 3.35H19V13.85l-1-4.85zM14 20H7.5l-2-2.5V11h8.5l2 2.5V20z"
-              fill="#2B7B8C"
+            {/* Turban */}
+            <path
+              d="M4 12C4 8 7 5 12 5C17 5 20 8 20 12"
+              stroke="#2B7B8C"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
-            <path 
-              d="M14 4c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z"
-              fill="#2B7B8C"
+            <path
+              d="M6 11C6 11 8 9 12 9C16 9 18 11 18 11"
+              stroke="#2B7B8C"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
+            {/* Face */}
+            <path
+              d="M9 14C9 14 10 16 12 16C14 16 15 14 15 14"
+              stroke="#2B7B8C"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            {/* Beard */}
+            <path
+              d="M8 13C8 13 10 18 12 18C14 18 16 13 16 13"
+              stroke="#2B7B8C"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            {/* Eyes */}
+            <circle cx="10" cy="13" r="0.5" fill="#2B7B8C" />
+            <circle cx="14" cy="13" r="0.5" fill="#2B7B8C" />
           </svg>
         </motion.div>
         <motion.div

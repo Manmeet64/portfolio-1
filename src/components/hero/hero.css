@@ -11,7 +11,6 @@
   background-color: #FDFBF7;
   justify-content: space-between;
   font-family: 'Gilroy', sans-serif;
-  padding-top: 80px;
 }
 
 .bg {
@@ -52,7 +51,7 @@
 }
 
 .hTitle {
-  margin-top: 20px;
+  margin-top: 50px;
   font-size: 72px;
   color: #03031B;
 }
@@ -101,31 +100,31 @@
   align-items: flex-end;
 }
 
-.socialLinks {
+.follow {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 12px;
   padding: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
+  background-color: #FFFFFF;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 20px rgba(3, 3, 27, 0.08);
 }
 
-.socialLinks a {
-  color: #03031B;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  padding: 8px;
-  border-radius: 8px;
-  background: rgba(187, 221, 225, 0.1);
+.follow img {
+  width: 20px;
+  cursor: pointer;
 }
 
-.socialLinks a:hover {
-  color: #2B7B8C;
-  opacity: 1;
-  background: rgba(187, 221, 225, 0.2);
-  transform: translateY(-2px);
+.followTextContainer {
+  position: relative;
+  margin-top: 8px;
+}
+
+.followText {
+  font-size: 12px;
+  color: #445566;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
 }
 
 /* Tagline Styles */
@@ -196,12 +195,12 @@
 .imageContainer {
   position: relative;
   width: 30%;
-  height: 75vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .heroImage {
@@ -277,7 +276,6 @@
   .hero {
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;
   }
 
   .hSection {
@@ -323,7 +321,64 @@
   .awards h2 {
     font-size: 24px;
   }
+}
 
+.awardIcon {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  background-color: #BBDDE1;
+  border-radius: 100%;
+  box-shadow: 0 4px 12px rgba(187, 221, 225, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.awardIcon svg {
+  width: 24px;
+  height: 24px;
+  color: #2B7B8C;
+}
+
+.awardIcon:hover {
+  transform: translateY(-3px);
+  background-color: #2B7B8C;
+}
+
+.awardIcon:hover svg {
+  color: #FFFFFF;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 24px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(43, 123, 140, 0.08);
+}
+
+.socialLinks a {
+  color: #03031B;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(187, 221, 225, 0.1);
+}
+
+.socialLinks a:hover {
+  color: #2B7B8C;
+  opacity: 1;
+  background: rgba(187, 221, 225, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
   .socialLinks {
     padding: 12px;
     gap: 16px;

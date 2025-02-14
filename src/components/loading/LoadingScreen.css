@@ -96,4 +96,11 @@
   .loading-text {
     font-size: 28px;
   }
+}
+
+.sardar-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 8px rgba(43, 123, 140, 0.2));
 } 

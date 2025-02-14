@@ -31,10 +31,10 @@
 
 .skillsContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -54,7 +54,7 @@
 .skillCategory h3 {
   font-size: 24px;
   color: #2B7B8C;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-weight: 500;
 }
 
@@ -90,50 +90,72 @@
   border-radius: 4px;
 }
 
+/* Responsive Breakpoints */
+@media (max-width: 1536px) {
+  .skillsContainer {
+    max-width: 1200px;
+    gap: 30px;
+  }
+
+  .skillCategory {
+    padding: 30px;
+  }
+}
+
 @media (max-width: 1280px) {
   .skillsContainer {
-    max-width: 1000px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+  }
+
+  .skillsTitle h2 {
+    font-size: 38px;
+  }
+
+  .skillCategory h3 {
+    font-size: 22px;
   }
 }
 
 @media (max-width: 1024px) {
   .skills {
-    min-height: 180vh;
     padding: 80px 20px 160px;
-    margin-bottom: 80px;
-    scroll-margin-top: 60px;
   }
 
   .skillsContainer {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    max-width: 600px;
-  }
-
-  .skillsTitle h2 {
-    font-size: 36px;
+    gap: 25px;
   }
 
   .skillCategory {
     padding: 25px;
   }
+
+  .skillsTitle h2 {
+    font-size: 34px;
+  }
+
+  .skillInfo {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 768px) {
   .skills {
-    min-height: 200vh;
-    padding: 60px 15px 140px;
-    margin-bottom: 60px;
-    scroll-margin-top: 40px;
+    padding: 60px 15px 120px;
   }
 
   .skillsContainer {
-    gap: 30px;
-    max-width: 100%;
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 20px;
+  }
+
+  .skillsTitle {
+    margin-bottom: 40px;
   }
 
   .skillsTitle h2 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .skillsTitle p {
@@ -142,9 +164,48 @@
 
   .skillCategory h3 {
     font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .skillsList {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 40px 15px 100px;
+  }
+
+  .skillsTitle h2 {
+    font-size: 28px;
+  }
+
+  .skillCategory {
+    padding: 20px;
   }
 
   .skillInfo {
     font-size: 14px;
+  }
+
+  .progressBar {
+    height: 6px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .skillsTitle h2 {
+    font-size: 26px;
+  }
+
+  .skillCategory {
+    padding: 15px;
+  }
+
+  .skillCategory h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
   }
 }

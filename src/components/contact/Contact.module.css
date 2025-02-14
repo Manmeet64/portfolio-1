@@ -152,25 +152,38 @@
   box-shadow: 0 6px 20px rgba(43, 123, 140, 0.2);
 }
 
-.message {
-  font-size: 14px;
-  color: #2B7B8C;
-  align-self: center;
-  padding: 8px 16px;
-  border-radius: 20px;
-  background-color: rgba(187, 221, 225, 0.2);
-  animation: fadeIn 0.3s ease;
+.button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #ccc;
+  transform: none;
+  box-shadow: none;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.button.disabled:hover {
+  background-color: #ccc;
+  transform: none;
+  box-shadow: none;
+}
+
+.message {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.success {
+  background-color: rgba(0, 200, 83, 0.1);
+  color: #00c853;
+  border: 1px solid rgba(0, 200, 83, 0.2);
+}
+
+.error {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border: 1px solid rgba(244, 67, 54, 0.2);
 }
 
 @media (max-width: 1280px) {

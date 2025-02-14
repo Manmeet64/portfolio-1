@@ -20,36 +20,65 @@ const variants = {
 };
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    user_username: '',
+    user_email: '',
+    user_message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  
   const formRef = useRef();
   const containerRef = useRef();
   const isInView = useInView(containerRef, { margin: "-100px" });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
-    emailjs
-      .sendForm(
+  const isFormValid = () => {
+    return formData.user_username.trim() !== '' && 
+           formData.user_email.trim() !== '' && 
+           formData.user_message.trim() !== '';
+  };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    
+    if (!isFormValid() || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSuccess(false);
+    setError(false);
+
+    try {
+      await emailjs.send(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        formRef.current,
         {
-          publicKey: import.meta.env.VITE_PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          setSuccess(true);
-          setError(false);
-          formRef.current.reset();
+          ...formData,
+          to_email: "2023.manmeets@isu.ac.in"
         },
-        (error) => {
-          console.error(error);
-          setError(true);
-          setSuccess(false);
-        }
+        import.meta.env.VITE_PUBLIC_KEY
       );
+
+      setSuccess(true);
+      setFormData({
+        user_username: '',
+        user_email: '',
+        user_message: ''
+      });
+      formRef.current.reset();
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -78,6 +107,8 @@ const Contact = () => {
                 name="user_username"
                 className={styles.input}
                 placeholder="John Doe"
+                value={formData.user_username}
+                onChange={handleChange}
                 required
               />
             </motion.div>
@@ -89,6 +120,8 @@ const Contact = () => {
                 name="user_email"
                 className={styles.input}
                 placeholder="john@example.com"
+                value={formData.user_email}
+                onChange={handleChange}
                 required
               />
             </motion.div>
@@ -99,23 +132,39 @@ const Contact = () => {
                 name="user_message"
                 className={styles.textarea}
                 placeholder="Write your message..."
+                value={formData.user_message}
+                onChange={handleChange}
                 required
               />
             </motion.div>
 
-            <motion.button variants={variants} className={styles.button}>
-              Send Message
+            <motion.button 
+              variants={variants} 
+              className={`${styles.button} ${!isFormValid() || isSubmitting ? styles.disabled : ''}`}
+              disabled={!isFormValid() || isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </motion.button>
 
             {success && (
-              <motion.span variants={variants} className={styles.message}>
-                Message sent successfully!
-              </motion.span>
+              <motion.div 
+                variants={variants} 
+                className={`${styles.message} ${styles.success}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                Message sent successfully! I'll get back to you soon.
+              </motion.div>
             )}
             {error && (
-              <motion.span variants={variants} className={styles.message}>
+              <motion.div 
+                variants={variants} 
+                className={`${styles.message} ${styles.error}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
                 Something went wrong. Please try again.
-              </motion.span>
+              </motion.div>
             )}
           </motion.form>
         </motion.div>

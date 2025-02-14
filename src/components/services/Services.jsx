@@ -34,28 +34,23 @@ const services = [
   {
     id: 1,
     img: "/service1.png",
-    title: "Full Stack Development",
-    desc: "Building end-to-end web applications",
+    title: "Full-Stack Web Development",
+    desc: "Developing scalable and high-performance MERN stack applications with modern features like real-time tracking, authentication, and admin dashboards.",
   },
   {
     id: 2,
     img: "/service2.png",
-    title: "UI/UX Design",
-    desc: "Creating intuitive user experiences",
+    title: "AI-Powered Solutions & Automation",
+    desc: "Integrating AI into applications with speech-to-text, sentiment analysis, chatbots, and smart automation to enhance business workflows.",
   },
   {
     id: 3,
-    img: "/service3.png",
-    title: "API Integration",
-    desc: "Seamless third-party integrations",
-  },
-  {
-    id: 4,
     img: "/service4.png",
-    title: "Database Design",
-    desc: "Optimized data architecture solutions",
+    title: "Product and Database Design",
+    desc: "Creating scalable and high-performance MERN stack applications with modern features like real-time tracking, authentication, and admin dashboards.",
   }
 ];
+
 
 const Services = () => {
   const ref = useRef();

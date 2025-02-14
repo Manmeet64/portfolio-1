@@ -4,33 +4,33 @@ import styles from "./Skills.module.css";
 
 const skillsData = {
   frontend: [
-    { name: "React.js", level: 95 },
-    { name: "JavaScript", level: 92 },
-    { name: "TypeScript", level: 88 },
-    { name: "Next.js", level: 85 },
-    { name: "HTML/CSS", level: 85 },
-    { name: "Redux", level: 82 },
+    { name: "React.js", level: 85 },
+    { name: "JavaScript", level: 85 },
+    { name: "CSS3", level: 80 },
+    { name: "HTML5", level: 90 },
   ],
   backend: [
-    { name: "Node.js", level: 90 },
-    { name: "Express.js", level: 88 },
     { name: "Python", level: 85 },
-    { name: "REST API", level: 85 },
-    { name: "GraphQL", level: 80 },
+    { name: "C++", level: 85 },
+    { name: "Node.js", level: 80 },
+    { name: "Express.js", level: 75 },
   ],
   databases: [
-    { name: "MongoDB", level: 92 },
-    { name: "PostgreSQL", level: 88 },
-    { name: "MySQL", level: 85 },
-    { name: "Redis", level: 82 },
-    { name: "Firebase", level: 80 },
+    { name: "MongoDB", level: 75 },
+    { name: "MySQL", level: 70 },
+    { name: "Firebase", level: 70 },
+    { name: "Neo4j", level: 65 },
   ],
   tools: [
-    { name: "Git", level: 95 },
-    { name: "Docker", level: 88 },
-    { name: "AWS", level: 85 },
-    { name: "Webpack", level: 82 },
-    { name: "Jest", level: 80 },
+    { name: "Git", level: 85 },
+    { name: "GitHub", level: 85 },
+    { name: "TypeScript", level: 75 },
+    { name: "Linux", level: 70 },
+  ],
+  concepts: [
+    { name: "Data Structures & Algorithms", level: 80 },
+    { name: "System Design", level: 60 },
+    { name: "Computer Networking", level: 60 },
   ]
 };
 
