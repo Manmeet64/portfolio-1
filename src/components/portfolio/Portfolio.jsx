@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./portfolio.css";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 const items = [
     {
         id: 1,
@@ -102,6 +102,14 @@ const ListItem = ({ item }) => {
         once: true,
     });
 
+    const handleRedirect = () => {
+        if (item.link.startsWith("http")) {
+            window.open(item.link, "_blank"); // Open external links in a new tab
+        } else {
+            window.location.href = item.link; // Handle internal links (if not using React Router)
+        }
+    };
+
     return (
         <div className="pItem" ref={ref}>
             <motion.div
@@ -110,6 +118,8 @@ const ListItem = ({ item }) => {
                 animate={isInView ? "animate" : "initial"}
                 exit="exit"
                 className="pImg"
+                onClick={handleRedirect} // Added onClick handler for the image
+                style={{ cursor: "pointer" }} // Add pointer cursor to indicate clickability
             >
                 <img src={item.img} alt="" />
             </motion.div>
@@ -125,6 +135,7 @@ const ListItem = ({ item }) => {
                 <motion.button
                     variants={childTextVariants}
                     className="projectButton"
+                    onClick={handleRedirect} // Added onClick handler for the button
                 >
                     <span>Live</span>
                     <svg
@@ -147,7 +158,6 @@ const ListItem = ({ item }) => {
         </div>
     );
 };
-
 const Portfolio = () => {
     const [containerDistance, setContainerDistance] = useState(0);
     const ref = useRef(null);
